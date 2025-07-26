@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.orders`(
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.orders`(
     order_id INT64,
     customer_id INT64,
     order_date STRING,
@@ -10,7 +10,7 @@ OPTIONS (
   uris = ['gs://retailer-datalake-project-27032025/landing/retailer-db/orders/*.json']
 );
 
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.customers`
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.customers`
 (
     customer_id INT64,
     name STRING,
@@ -22,7 +22,7 @@ OPTIONS (
     uris = ['gs://retailer-datalake-project-27032025/landing/retailer-db/customers/*.json']
 );
 
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.products`
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.products`
 (
     product_id INT64,
     name STRING,
@@ -35,7 +35,7 @@ OPTIONS (
     uris = ['gs://retailer-datalake-project-27032025/landing/retailer-db/products/*.json']
 );
 
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.categories`
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.categories`
 (
     category_id INT64,
     name STRING,
@@ -46,7 +46,7 @@ OPTIONS (
     uris = ['gs://retailer-datalake-project-27032025/landing/retailer-db/categories/*.json']
 );
 
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.order_items`
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.order_items`
 (
     order_item_id INT64,
     order_id INT64,
@@ -61,7 +61,7 @@ OPTIONS (
 );
 -------------------------------------------------------------------------------------------------------------
 -- Suppliers Table
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.suppliers` (
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.suppliers` (
     supplier_id INT64,
     supplier_name STRING,
     contact_name STRING,
@@ -78,7 +78,7 @@ OPTIONS (
 );
 
 -- Product Suppliers Table (Mapping suppliers to products)
-CREATE EXTERNAL TABLE IF NOT EXISTS `avd-databricks-demo.bronze_dataset.product_suppliers` (
+CREATE EXTERNAL TABLE IF NOT EXISTS `gcp-practice-1-464706.bronze_dataset1.product_suppliers` (
     supplier_id INT64,
     product_id INT64,
     supply_price FLOAT64,
@@ -91,7 +91,7 @@ OPTIONS (
 
 -------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE EXTERNAL TABLE `avd-databricks-demo.bronze_dataset.customer_reviews` (
+CREATE OR REPLACE EXTERNAL TABLE `gcp-practice-1-464706.bronze_dataset1.customer_reviews` (
   id STRING,
   customer_id INT64,
   product_id INT64,
